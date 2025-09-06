@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Padrino Diablo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css.css">
+  <style>
+    
+  </style>
+</head>
+<body>
+
+  <video autoplay muted loop id="video-fondo" playsinline>
+    <source src="Video de WhatsApp 2025-09-05 a las 22.14.51_f783e85c.mp4" type="video/mp4" />
+    Tu navegador no soporta video HTML5.
+  </video>
+  <!-- Imagen que activa QR -->
+  <div class="profile-pic" onclick="mostrarQR()">
+    <img src="Imagen de WhatsApp 2025-09-05 a las 22.15.04_d95d0a63.jpg" alt="Tu foto de perfil" />
+  </div>
+
+  <h1>Padrino Diablo</h1>
+  <p>Síguenos en nuestras redes sociales:</p>
+
+  <div class="social-links">
+      <div class="social-links">
+    <!-- Instagram 1 -->
+    <a class="social-button instagram" href="https://www.instagram.com/diabloo.hernandez666?igsh=ZzNkMnNyMGxnbnlu" target="_blank" rel="noopener noreferrer">
+      <img class="icon" src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" />
+      Diablo Hernandez 
+    </a>
+
+    <!-- TikTok 1 -->
+    <a class="social-button tiktok" href="https://www.tiktok.com/@padrinodiablo6?_t=ZS-8zTUDjUjvjc&_r=1" target="_blank" rel="noopener noreferrer">
+      <img class="icon" src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" />
+      Padrino Diablo
+    </a>
+
+    <!-- YouTube -->
+    <a class="social-button youtube" href="https://youtube.com/@padrinodiablo666?si=COhUEfTTUfTdgdbt" target="_blank" rel="noopener noreferrer">
+      <img class="icon" src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
+      Padrino Diablo
+    </a>
+
+    <!-- Facebook 1 -->
+    <a class="social-button facebook" href="https://www.facebook.com/share/16vmhdbAg8/" target="_blank" rel="noopener noreferrer">
+      <img class="icon" src="https://cdn-icons-png.flaticon.com/512/1384/1384053.png" alt="Facebook" />
+      Diablo Hernandez 
+    </a>
+
+    <!-- Facebook 2 -->
+    <a class="social-button facebook" href="https://www.facebook.com/share/15wwRY8ajr/" target="_blank" rel="noopener noreferrer">
+      <img class="icon" src="https://cdn-icons-png.flaticon.com/512/1384/1384053.png" alt="Facebook" />
+      Tienda Satanica
+    </a>
+
+       <!-- Facebook 2 -->
+    <a class="social-button WhatsApp" href="https://wa.me/+522229244573" target="_blank" rel="noopener noreferrer">
+      <img class="icon" src="WhatsApp_icon.png" alt="WhatsApp" />
+      WhatsApp
+        </a>
+  </div>
+
+  <footer>
+    © 2025 JSPrograment — Todos los derechos reservados
+  </footer>
+
+  <!-- MODAL QR -->
+  <div class="modal" id="modalQR" onclick="cerrarQR(event)">
+    <div class="modal-content">
+      <span class="close" onclick="cerrarQR(event)">&times;</span>
+      <h2>Escanea y comparte</h2>
+      <img id="qr-img" src="" alt="QR Code">
+      <p>Padrino Diablo</p>
+    </div>
+  </div>
+
+  <script>
+    function mostrarQR() {
+      const url = window.location.href; // URL actual de la página
+      const qrImg = document.getElementById('qr-img');
+      qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(url)}&size=250x250`;
+      document.getElementById('modalQR').style.display = 'flex';
+    }
+
+    function cerrarQR(e) {
+      if (e.target.classList.contains('modal') || e.target.classList.contains('close')) {
+        document.getElementById('modalQR').style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>
